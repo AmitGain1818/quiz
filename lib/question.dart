@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Questions extends StatelessWidget {
-  var questionText;
+  final String questionText;
 
   Questions(this.questionText);
 
@@ -10,7 +10,10 @@ class Questions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       questionText,
-      style: TextStyle(fontSize: 35, color: Colors.red),
+      style: TextStyle(
+        fontSize: 35,
+        color: Colors.green,
+      ),
     );
   }
 }
