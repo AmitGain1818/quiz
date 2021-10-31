@@ -20,25 +20,38 @@ class _QuizState extends State<Quiz> {
   @override
   Widget build(BuildContext context) {
     var question = [
-      'What is my favorite color?',
-      'What is my favorite pet?',
-      'What is my favorite car?',
+      {
+        'questionText': 'what is your fav color?',
+        'answer': ['red', 'black', 'yellow', 'blue']
+      },
+      {
+        'questionText': 'what is your fav animal?',
+        'answer': ['cow', 'dog', 'cat', 'tiger']
+      },
+      {
+        'questionText': 'what is your fav sports?',
+        'answer': ['cricket', 'football', 'badminton', 'cram']
+      },
+      {
+        'questionText': 'what is your fav laptop?',
+        'answer': ['asus', 'hp', 'dell', 'lenevo']
+      },
     ];
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.deepPurple,
         appBar: AppBar(
+          backgroundColor: Colors.cyan,
           title: Text('Quiz'),
         ),
         body: Center(
           child: Column(
             children: [
-              Questions(
-                question[_answerIndex],
-              ),
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
+              Questions(question[_answerIndex]['questionText'] as String),
+              ...(question[_answerIndex]['answer'] as List<String>)
+                  .map((answer) {
+                return Answers(_answerQuestion, answer);
+              }).toList(),
             ],
           ),
         ),

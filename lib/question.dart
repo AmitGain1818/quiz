@@ -12,7 +12,7 @@ class Questions extends StatelessWidget {
       questionText,
       style: TextStyle(
         fontSize: 35,
-        color: Colors.cyan,
+        color: Colors.green,
       ),
     );
   }
