@@ -39,7 +39,7 @@ class _QuizState extends State<Quiz> {
     ];
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.cyan,
           title: Text('Quiz'),
